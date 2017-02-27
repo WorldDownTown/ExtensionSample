@@ -8,17 +8,28 @@
 
 import Foundation
 
-private let formatter: NumberFormatter = {
-    let formatter: NumberFormatter = NumberFormatter()
-    formatter.numberStyle = .currency
-    formatter.locale = Locale(identifier: "ja_JP")
-    return formatter
-}()
+private let formatter: NumberFormatter = NumberFormatter()
 
 public extension Int {
 
-    // 日本円表記のStringに変換する
-    public var JPYString: String {
+    private func formattedString(style: NumberFormatter.Style, localeIdentifier: String) -> String {
+        formatter.numberStyle = style
+        formatter.locale = Locale(identifier: localeIdentifier)
         return formatter.string(from: self as NSNumber) ?? ""
+    }
+
+    // カンマ区切りString
+    var formattedJPString: String {
+        return formattedString(style: .decimal, localeIdentifier: "ja_JP")
+    }
+
+    // 日本円表記のString
+    var JPYString: String {
+        return formattedString(style: .currency, localeIdentifier: "ja_JP")
+    }
+
+    // USドル表記のString
+    var USDString: String {
+        return formattedString(style: .currency, localeIdentifier: "en_US")
     }
 }

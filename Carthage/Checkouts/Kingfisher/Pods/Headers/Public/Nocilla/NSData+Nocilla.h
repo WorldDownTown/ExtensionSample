@@ -1,6 +1,1 @@
-#import <Foundation/Foundation.h>
-#import "LSHTTPBody.h"
-
-@interface NSData (Nocilla) <LSHTTPBody>
-
-@end
+../../../Nocilla/Nocilla/Categories/NSData+Nocilla.h

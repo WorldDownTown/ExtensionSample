@@ -8,6 +8,7 @@
 
 import UIKit
 import Library
+import SVProgressHUD
 
 final class ViewController: UIViewController {
 
@@ -23,8 +24,17 @@ final class ViewController: UIViewController {
         print("===== 4 =====")
         print(["key1": 1] + ["key1": 0, "key2": 2])
         print("===== 5 =====")
-        print(1000000.JPYString)
+        let million: Int = 1_000_000
+        print(million.formattedJPString)
+        print(million.JPYString)
+        print(million.USDString)
         print("===== 6 =====")
         print(UIColor.iq.pink)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        SVProgressHUD.iq.showSuccess(status: "success")
     }
 }
