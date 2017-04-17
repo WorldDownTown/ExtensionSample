@@ -10,26 +10,37 @@ import Foundation
 
 private let formatter: NumberFormatter = NumberFormatter()
 
-public extension Int {
+private func formattedString(number: Int, style: NumberFormatter.Style, localeIdentifier: String) -> String {
+    formatter.numberStyle = style
+    formatter.locale = Locale(identifier: localeIdentifier)
+    return formatter.string(from: number as NSNumber) ?? ""
+}
 
-    private func formattedString(style: NumberFormatter.Style, localeIdentifier: String) -> String {
-        formatter.numberStyle = style
-        formatter.locale = Locale(identifier: localeIdentifier)
-        return formatter.string(from: self as NSNumber) ?? ""
-    }
+
+public extension Int {
 
     // カンマ区切りString
     var formattedJPString: String {
-        return formattedString(style: .decimal, localeIdentifier: "ja_JP")
+        return formattedString(number: self, style: .decimal, localeIdentifier: "ja_JP")
     }
 
     // 日本円表記のString
     var JPYString: String {
-        return formattedString(style: .currency, localeIdentifier: "ja_JP")
+        return formattedString(number: self, style: .currency, localeIdentifier: "ja_JP")
     }
 
     // USドル表記のString
     var USDString: String {
-        return formattedString(style: .currency, localeIdentifier: "en_US")
+        return formattedString(number: self, style: .currency, localeIdentifier: "en_US")
+    }
+}
+
+extension Int: ExtensionCompatible { }
+
+public extension Extension where Base == Int {
+
+    // 日本円表記のString
+    var JPYString: String {
+        return formattedString(number: base, style: .currency, localeIdentifier: "ja_JP")
     }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CE5B49FC1E63305800B77C7C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B49FB1E63305800B77C7C /* Date+Extension.swift */; };
+		CEB7BDD81EA445A400A9EAB4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7BDD71EA445A400A9EAB4 /* Extension.swift */; };
+		CEB7BDDA1EA4487B00A9EAB4 /* Benchmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB7BDD91EA4487B00A9EAB4 /* Benchmark.framework */; };
+		CEB7BDDB1EA4487B00A9EAB4 /* Benchmark.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEB7BDD91EA4487B00A9EAB4 /* Benchmark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CECA98D91E6329D100003101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA98D81E6329D100003101 /* AppDelegate.swift */; };
 		CECA98DB1E6329D100003101 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA98DA1E6329D100003101 /* ViewController.swift */; };
 		CECA98DE1E6329D100003101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECA98DC1E6329D100003101 /* Main.storyboard */; };
@@ -82,6 +85,7 @@
 			files = (
 				CECA99311E632C8100003101 /* SVProgressHUD.framework in Embed Frameworks */,
 				CECA992F1E632C8100003101 /* Kingfisher.framework in Embed Frameworks */,
+				CEB7BDDB1EA4487B00A9EAB4 /* Benchmark.framework in Embed Frameworks */,
 				CECA99211E632AA400003101 /* Library.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -91,6 +95,8 @@
 
 /* Begin PBXFileReference section */
 		CE5B49FB1E63305800B77C7C /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "Extensions/Date+Extension.swift"; sourceTree = "<group>"; };
+		CEB7BDD71EA445A400A9EAB4 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = Extensions/Extension.swift; sourceTree = "<group>"; };
+		CEB7BDD91EA4487B00A9EAB4 /* Benchmark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Benchmark.framework; path = Carthage/Build/iOS/Benchmark.framework; sourceTree = "<group>"; };
 		CECA98D51E6329D100003101 /* ExtensionSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtensionSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECA98D81E6329D100003101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECA98DA1E6329D100003101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 			files = (
 				CECA992E1E632C8100003101 /* Kingfisher.framework in Frameworks */,
 				CECA99201E632AA400003101 /* Library.framework in Frameworks */,
+				CEB7BDDA1EA4487B00A9EAB4 /* Benchmark.framework in Frameworks */,
 				CECA99301E632C8100003101 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +232,7 @@
 		CECA990C1E632AA400003101 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				CEB7BDD71EA445A400A9EAB4 /* Extension.swift */,
 				CECA99291E632BD700003101 /* Extensions */,
 				CECA990D1E632AA400003101 /* Library.h */,
 				CECA990E1E632AA400003101 /* Info.plist */,
@@ -259,6 +267,7 @@
 		CECA99321E632C8400003101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEB7BDD91EA4487B00A9EAB4 /* Benchmark.framework */,
 				CECA992C1E632C8100003101 /* Kingfisher.framework */,
 				CECA992D1E632C8100003101 /* SVProgressHUD.framework */,
 			);
@@ -483,6 +492,7 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Benchmark.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
@@ -525,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB7BDD81EA445A400A9EAB4 /* Extension.swift in Sources */,
 				CECA993E1E632D6600003101 /* UIViewController+Extension.swift in Sources */,
 				CECA99361E632CB800003101 /* Int+Extension.swift in Sources */,
 				CECA99381E632D0B00003101 /* Dictionary+Extension.swift in Sources */,
